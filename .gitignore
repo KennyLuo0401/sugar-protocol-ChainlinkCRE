@@ -1,0 +1,62 @@
+# Environment
+.env
+.env.local
+.env.production
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Build outputs
+build/
+dist/
+frontend/dist/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+
+# Secrets
+**/secrets/
+*private_key*
+
+# Docker
+docker-compose.override.yml
+
+# CRE
+cre-project/**/node_modules/
+cre-project/sugar-protocol/market-resolver/config.staging.json
+cre-project/sugar-protocol/market-resolver/.cre_build_tmp.js
+
+# Move build cache
+contracts/build/
+
+# EVM build artifacts
+contracts/evm/artifacts/
+contracts/evm/cache/
+
+# Claude Code memory (private)
+.claude/
+
+# Internal notes (not for public repo)
+Gemini/
+CLAUDE.md

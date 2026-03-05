@@ -1,0 +1,60 @@
+[
+  {"canonical_id": "taiwan", "label": "台灣", "tier": "country", "aliases": ["Taiwan", "ROC", "中華民國"], "country": "TW"},
+  {"canonical_id": "usa", "label": "美國", "tier": "country", "aliases": ["United States", "US", "America", "美利堅"], "country": "US"},
+  {"canonical_id": "china", "label": "中國", "tier": "country", "aliases": ["China", "PRC", "中華人民共和國", "大陸"], "country": "CN"},
+  {"canonical_id": "japan", "label": "日本", "tier": "country", "aliases": ["Japan", "JP"], "country": "JP"},
+  {"canonical_id": "south_korea", "label": "韓國", "tier": "country", "aliases": ["South Korea", "Korea", "ROK"], "country": "KR"},
+  {"canonical_id": "eu", "label": "歐盟", "tier": "country", "aliases": ["European Union", "EU"], "country": null},
+  {"canonical_id": "russia", "label": "俄羅斯", "tier": "country", "aliases": ["Russia", "俄國"], "country": "RU"},
+  {"canonical_id": "ukraine", "label": "烏克蘭", "tier": "country", "aliases": ["Ukraine"], "country": "UA"},
+
+  {"canonical_id": "dpp", "label": "民進黨", "tier": "organization", "aliases": ["DPP", "民主進步黨", "綠營", "綠委"], "country": "TW", "domain": "politics"},
+  {"canonical_id": "kmt", "label": "國民黨", "tier": "organization", "aliases": ["KMT", "中國國民黨", "藍營", "藍委"], "country": "TW", "domain": "politics"},
+  {"canonical_id": "tpp", "label": "民眾黨", "tier": "organization", "aliases": ["TPP", "台灣民眾黨", "白營"], "country": "TW", "domain": "politics"},
+
+  {"canonical_id": "lai_ching_te", "label": "賴清德", "tier": "person", "aliases": ["Lai Ching-te", "William Lai"], "country": "TW", "domain": "politics", "belongs_to": "dpp"},
+  {"canonical_id": "cho_jung_tai", "label": "卓榮泰", "tier": "person", "aliases": ["Cho Jung-tai"], "country": "TW", "domain": "politics", "belongs_to": "dpp"},
+  {"canonical_id": "chu_li_luan", "label": "朱立倫", "tier": "person", "aliases": ["Eric Chu"], "country": "TW", "domain": "politics", "belongs_to": "kmt"},
+  {"canonical_id": "ko_wen_je", "label": "柯文哲", "tier": "person", "aliases": ["Ko Wen-je", "KP"], "country": "TW", "domain": "politics", "belongs_to": "tpp"},
+  {"canonical_id": "han_kuo_yu", "label": "韓國瑜", "tier": "person", "aliases": ["Han Kuo-yu"], "country": "TW", "domain": "politics", "belongs_to": "kmt"},
+  {"canonical_id": "huang_shan_shan", "label": "黃珊珊", "tier": "person", "aliases": ["Huang Shan-shan"], "country": "TW", "domain": "politics"},
+
+  {"canonical_id": "trump", "label": "川普", "tier": "person", "aliases": ["Trump", "Donald Trump", "特朗普"], "country": "US", "domain": "politics"},
+  {"canonical_id": "biden", "label": "拜登", "tier": "person", "aliases": ["Biden", "Joe Biden"], "country": "US", "domain": "politics"},
+  {"canonical_id": "xi_jinping", "label": "習近平", "tier": "person", "aliases": ["Xi Jinping", "Xi"], "country": "CN", "domain": "politics"},
+  {"canonical_id": "putin", "label": "普丁", "tier": "person", "aliases": ["Putin", "Vladimir Putin", "普京"], "country": "RU", "domain": "politics"},
+  {"canonical_id": "elon_musk", "label": "馬斯克", "tier": "person", "aliases": ["Elon Musk", "Musk"], "country": "US", "domain": "tech"},
+
+  {"canonical_id": "tsmc", "label": "台積電", "tier": "organization", "aliases": ["TSMC", "2330", "台灣積體電路"], "country": "TW", "domain": "semiconductor"},
+  {"canonical_id": "foxconn", "label": "鴻海", "tier": "organization", "aliases": ["Foxconn", "2317", "富士康"], "country": "TW", "domain": "manufacturing"},
+  {"canonical_id": "mediatek", "label": "聯發科", "tier": "organization", "aliases": ["MediaTek", "2454"], "country": "TW", "domain": "semiconductor"},
+
+  {"canonical_id": "apple", "label": "蘋果", "tier": "organization", "aliases": ["Apple", "AAPL"], "country": "US", "domain": "tech"},
+  {"canonical_id": "nvidia", "label": "輝達", "tier": "organization", "aliases": ["NVIDIA", "NVDA", "黃仁勳"], "country": "US", "domain": "semiconductor"},
+  {"canonical_id": "google", "label": "Google", "tier": "organization", "aliases": ["Alphabet", "GOOGL", "谷歌"], "country": "US", "domain": "tech"},
+  {"canonical_id": "microsoft", "label": "微軟", "tier": "organization", "aliases": ["Microsoft", "MSFT"], "country": "US", "domain": "tech"},
+  {"canonical_id": "meta", "label": "Meta", "tier": "organization", "aliases": ["Facebook", "META", "臉書"], "country": "US", "domain": "tech"},
+  {"canonical_id": "openai", "label": "OpenAI", "tier": "organization", "aliases": ["open ai"], "country": "US", "domain": "ai"},
+  {"canonical_id": "samsung", "label": "三星", "tier": "organization", "aliases": ["Samsung", "三星電子"], "country": "KR", "domain": "tech"},
+
+  {"canonical_id": "fed", "label": "聯準會", "tier": "organization", "aliases": ["Fed", "Federal Reserve", "美聯儲", "FED"], "country": "US", "domain": "finance"},
+  {"canonical_id": "boj", "label": "日本央行", "tier": "organization", "aliases": ["BOJ", "Bank of Japan", "日銀"], "country": "JP", "domain": "finance"},
+  {"canonical_id": "ecb", "label": "歐洲央行", "tier": "organization", "aliases": ["ECB", "European Central Bank"], "domain": "finance"},
+  {"canonical_id": "pboc", "label": "中國人民銀行", "tier": "organization", "aliases": ["PBOC", "People's Bank of China", "人行"], "country": "CN", "domain": "finance"},
+
+  {"canonical_id": "bitcoin", "label": "比特幣", "tier": "asset", "aliases": ["Bitcoin", "BTC"], "domain": "crypto"},
+  {"canonical_id": "ethereum", "label": "以太幣", "tier": "asset", "aliases": ["Ethereum", "ETH", "以太坊"], "domain": "crypto"},
+  {"canonical_id": "solana", "label": "Solana", "tier": "asset", "aliases": ["SOL"], "domain": "crypto"},
+  {"canonical_id": "sui", "label": "Sui", "tier": "asset", "aliases": ["SUI"], "domain": "crypto"},
+  {"canonical_id": "sp500", "label": "標普500", "tier": "asset", "aliases": ["S&P 500", "SPX", "SPY"], "domain": "finance"},
+  {"canonical_id": "nasdaq", "label": "那斯達克", "tier": "asset", "aliases": ["Nasdaq", "IXIC", "QQQ"], "domain": "finance"},
+  {"canonical_id": "taiex", "label": "台股加權指數", "tier": "asset", "aliases": ["TAIEX", "加權指數", "台股"], "country": "TW", "domain": "finance"},
+  {"canonical_id": "gold", "label": "黃金", "tier": "asset", "aliases": ["Gold", "XAU"], "domain": "commodities"},
+  {"canonical_id": "crude_oil", "label": "原油", "tier": "asset", "aliases": ["Crude Oil", "WTI", "Brent", "石油"], "domain": "commodities"},
+
+  {"canonical_id": "us_tariff", "label": "美國關稅政策", "tier": "event", "aliases": ["tariff", "關稅戰", "貿易戰"], "domain": "trade", "topic": "us_tariff"},
+  {"canonical_id": "ai_boom", "label": "AI 熱潮", "tier": "event", "aliases": ["AI boom", "人工智慧浪潮"], "domain": "tech", "topic": "ai"},
+  {"canonical_id": "taiwan_strait", "label": "台海局勢", "tier": "event", "aliases": ["Taiwan Strait", "台海危機", "兩岸關係"], "domain": "geopolitics", "topic": "cross_strait"},
+  {"canonical_id": "russia_ukraine_war", "label": "俄烏戰爭", "tier": "event", "aliases": ["Russia-Ukraine War", "烏俄戰爭", "烏克蘭戰爭"], "domain": "geopolitics"},
+  {"canonical_id": "us_election_2024", "label": "2024美國大選", "tier": "event", "aliases": ["2024 US Election", "美國總統大選"], "domain": "politics", "country": "US"}
+]

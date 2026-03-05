@@ -1,0 +1,67 @@
+# Chainlink CRE Workflow Configuration
+# Project: Sugar Protocol - Event-Driven Market Verification
+# Hackathon: Chainlink Convergence 2026
+#
+# CRE Capability #3: Scan on-chain events → conditional trigger → call contract
+# Flow: MarketCreated event on EVM → CRE reads claim data → calls verifyMarket()
+
+name: sugar-protocol-market-verifier
+version: "0.2.0"
+description: "Monitors PredictionMarket.MarketCreated events and automatically verifies new markets via CRE."
+
+# Workflow Trigger Definition
+# CRE Capability #3: On-chain event trigger
+# Scans for MarketCreated(uint256 indexed marketId, string claimId, address creator, uint256 stake)
+trigger:
+  type: evm_log
+  config:
+    chain: ethereum-testnet-sepolia
+    contract_address: ${PREDICTION_MARKET_ADDRESS}
+    event_signature: "MarketCreated(uint256,string,address,uint256)"
+    # topic[0] = keccak256("MarketCreated(uint256,string,address,uint256)")
+    # topic[1] = indexed marketId (any value)
+
+# Input parameters extracted from on-chain event
+inputs:
+  - name: marketId
+    type: uint256
+    source: event.topics[1]
+    description: "The market ID from the MarketCreated event (indexed)"
+  - name: claimId
+    type: string
+    source: event.data
+    description: "The claim ID from event data"
+  - name: creator
+    type: address
+    source: event.data
+    description: "The market creator address"
+  - name: stake
+    type: uint256
+    source: event.data
+    description: "The staked ETH amount"
+
+# Environment Variables mapping from CRE Secrets
+env:
+  SUGAR_API_URL: ${SUGAR_API_URL}
+  OPENAI_API_KEY: ${OPENAI_API_KEY}
+  PREDICTION_MARKET_ADDRESS: ${PREDICTION_MARKET_ADDRESS}
+  EVM_RPC_URL: ${EVM_RPC_URL}
+  EVM_PRIVATE_KEY: ${EVM_PRIVATE_KEY}
+
+# Execution Steps
+steps:
+  - name: verify_market
+    type: script
+    config:
+      handler: market_resolver.ts
+      runtime: typescript-latest
+    inputs:
+      marketId: ${inputs.marketId}
+      claimId: ${inputs.claimId}
+      creator: ${inputs.creator}
+      stake: ${inputs.stake}
+
+# Output Configuration
+outputs:
+  - name: verificationResult
+    value: ${steps.verify_market.output}

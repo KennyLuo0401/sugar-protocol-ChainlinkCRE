@@ -1,0 +1,75 @@
+version: "3.8"
+
+services:
+  # ─────────────────────────────────────────────
+  # Sugar Protocol App (FastAPI + Static Frontend)
+  # ─────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sugar-app
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DB_URL=postgresql+asyncpg://sugar:sugar_pass@db:5432/sugar_protocol
+      - DEFAULT_MODEL=${DEFAULT_MODEL:-gpt-4o-mini}
+      - LLM_TIMEOUT=${LLM_TIMEOUT:-30}
+      - LLM_MAX_RETRIES=${LLM_MAX_RETRIES:-3}
+      - FETCH_TIMEOUT=${FETCH_TIMEOUT:-15}
+      - JINA_BASE_URL=${JINA_BASE_URL:-https://r.jina.ai/}
+      - WORKERS=${WORKERS:-1}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - sugar-net
+
+  # ─────────────────────────────────────────────
+  # PostgreSQL Database
+  # ─────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: sugar-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sugar
+      POSTGRES_PASSWORD: sugar_pass
+      POSTGRES_DB: sugar_protocol
+    volumes:
+      - sugar-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sugar -d sugar_protocol"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - sugar-net
+
+  # ─────────────────────────────────────────────
+  # Nginx Reverse Proxy (Optional — for production)
+  # ─────────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: sugar-nginx
+    restart: unless-stopped
+    ports:
+      - "${NGINX_PORT:-80}:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    networks:
+      - sugar-net
+    profiles:
+      - production
+
+volumes:
+  sugar-data:
+
+networks:
+  sugar-net:
+    driver: bridge

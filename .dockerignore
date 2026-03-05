@@ -1,0 +1,47 @@
+# Version control
+.git
+.gitignore
+
+# Virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Secrets
+.env
+
+# Database files
+*.db
+
+# Test files
+tests/
+
+# Smart contracts (not needed in Docker)
+contracts/
+cre/
+
+# Documentation
+*.md
+專案紀錄/
+Gemini/
+
+# Frontend node_modules (will be fresh installed in build stage)
+frontend/node_modules/
+frontend/dist/
+
+# OS
+Thumbs.db
+
+# Claude/Gemini workspace
+.claude/
+.gemini/

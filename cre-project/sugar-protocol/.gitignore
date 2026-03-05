@@ -1,0 +1,3 @@
+*.env
+market-resolver/config.staging.json
+market-resolver/config.staging.json
