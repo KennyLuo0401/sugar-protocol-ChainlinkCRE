@@ -13,13 +13,19 @@
 
 ![Sugar Protocol 3D Graph](frontend/screenTest/V_2.png)
 
-<!-- **[Demo Video](TODO)** -->
+**[Demo Video](TODO)**
 
 ---
 
 ## The Problem
 
-We're drowning in information, but starving for truth. Social media amplifies unverified claims, and there's no systematic way for communities to collectively evaluate what's real. Fact-checkers can't scale, and centralized platforms have their own biases.
+Discourse has value — and that's exactly why it's under attack. In today's media landscape, controlling the narrative means controlling markets, elections, and public opinion. Social media amplifies unverified claims at scale, and those who dominate the discourse win — regardless of truth.
+
+Traditional fact-checking can't keep up: it's too slow, impossible to scale, and inevitably centralized. There is no systematic, decentralized mechanism for communities to collectively evaluate what's real and reach consensus on contested claims.
+
+## Our Thesis
+
+What if we could use blockchain's immutability and transparency to record the flow of public discourse — and use prediction market economics to filter signal from noise? When telling the truth pays and lying costs money, the crowd becomes the most efficient fact-checker in the world.
 
 ## The Solution
 
@@ -281,7 +287,7 @@ cd frontend && npm run build
 
 ## Built By
 
-**Kenny** — Solo builder for Chainlink Convergence Hackathon 2026
+**Kenny** — Solo builder, Chainlink Convergence Hackathon 2026. Sugar Protocol is built on a simple belief: when truth has economic value, society can reach consensus faster.
 
 ---
 
